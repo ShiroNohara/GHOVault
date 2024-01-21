@@ -6,19 +6,13 @@
 // global scope, and execute the script.
 import hre from "hardhat";
 
-const currentTimestampInSeconds = Math.round(Date.now() / 1000);
-const unlockTime = currentTimestampInSeconds + 60;
-
-const lockedAmount = hre.ethers.parseEther("0.001");
-
-const lock = await ethers.deployContract("Lock", [unlockTime], {
-  value: lockedAmount,
-});
+const lock = await ethers.deployContract("Vault", [
+  "0xc4bF5CbDaBE595361438F8c6a187bDc330539c60",
+  "100",
+  "100",
+  "1708528966",
+]);
 
 await lock.waitForDeployment();
 
-console.log(
-  `Lock with ${ethers.formatEther(
-    lockedAmount
-  )}ETH and unlock timestamp ${unlockTime} deployed to ${lock.target}`
-);
+console.log(`Vault deployed to ${lock.target}`);
