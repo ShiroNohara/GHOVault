@@ -1,10 +1,11 @@
 import Navbar from "./components/Navbar";
-import Home from "./components/Home";
-import GenerateBytes from "./components/GenerateBytes";
+import Stake from "./components/Stake";
+import Borrow from "./components/Borrow";
 // import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import Footer from "./components/Footer";
+import Vault from "./components/Vault";
 
 function App() {
   return (
@@ -12,8 +13,9 @@ function App() {
       <BrowserRouter>
         <Navbar />
         <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/bytes" element={<GenerateBytes />} />
+          <Route path="/" element={<Vault />} />
+          <Route path="/stake" element={<Stake />} />
+          <Route path="/borrow" element={<Borrow />} />
         </Routes>
       </BrowserRouter>
       <Footer />

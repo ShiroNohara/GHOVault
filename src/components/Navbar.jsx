@@ -7,8 +7,9 @@ import { Link as ScrollLink, Events } from "react-scroll";
 import { useNavigate } from "react-router-dom";
 
 const navigation = [
-  { name: "Home", to: "/", current: false },
-  { name: "Bytes", to: "/bytes", current: false },
+  { name: "YeildHub", to: "/", current: false },
+  { name: "Stake", to: "/stake", current: false },
+  { name: "Borrow", to: "/borrow", current: false },
 ];
 
 function classNames(...classes) {
@@ -30,7 +31,7 @@ export default function Navbar() {
             <div className="relative flex h-16 items-center justify-between">
               <div className="absolute inset-y-0 left-0 flex items-center sm:hidden">
                 {/* Mobile menu button*/}
-                <Disclosure.Button className="relative inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white">
+                <Disclosure.Button className="relative inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-customPurple hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white">
                   <span className="absolute -inset-0.5" />
                   <span className="sr-only">Open main menu</span>
                   {open ? (
@@ -48,7 +49,7 @@ export default function Navbar() {
                         key={item.name}
                         onClick={() => navigate(item.to)}
                         className={classNames(
-                          "text-gray-300 hover:bg-gray-700 hover:text-white cursor-pointer",
+                          "text-gray-300 hover:bg-customPurple hover:text-white cursor-pointer",
                           "rounded-md px-3 py-2 text-base font-medium"
                         )}
                       >
@@ -72,7 +73,7 @@ export default function Navbar() {
                   onClick={() => navigate(item.to)}
                   offset={-64}
                   className={classNames(
-                    "text-gray-300 hover:bg-gray-700 hover:text-white cursor-pointer",
+                    "text-gray-300 hover:bg-customPurple hover:text-white cursor-pointer",
                     "block rounded-md px-3 py-2 text-lg font-medium"
                   )}
                 >
